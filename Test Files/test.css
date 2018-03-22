@@ -145,3 +145,7 @@ column-span:all;
 #keyfield {
   clear:left;
 }
+#enemyimg {
+    height:70px;
+    width:70px;
+}

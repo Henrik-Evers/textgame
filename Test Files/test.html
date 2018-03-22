@@ -1,11 +1,27 @@
 <!-- Copyright (C) 2018  Henrik Evers & Andrew Larkins -->
 <!DOCTYPE html>
 <html>
+  <!-- TO-DO:
+  Add character creation
+  Add equipment and spells
+  More monsters
+  Saving
+  -->
+  <!-- Test Elements:
+  HTML:
+      Keybindings
+      Images
+  JS:
+      Images
+      Savecodes
+  CSS:
+      enemyimg tag
+  -->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Text-Based Adventure Game</title>
-    <link href="index.css" rel="stylesheet" type="text/css"/>
+    <title>Text-Based Adventure Game - Test</title>
+    <link href="test.css" rel="stylesheet" type="text/css"/>
   </head>
   <body>
     <p id="copyright">Copyright (C) 2018  Henrik Evers & Andrew Larkins<br>This work is licensed under GNU General Public License version 3.0</p>
@@ -23,7 +39,6 @@
     <button id="up" onlcick="speedIncrease(); changeText();">Runnning Speed</button>
     <p id="spacer">ggggg</p><br>
     <p id="statblock">You have 2 attack.<br>You have 8 health.<br>You have 70 speed.</p>
-    <img id="enemyimg" height:"50px" width:"50px" src=""></img>
     <p id="log"></p>
     <form id="saveform">
       Input Save Code:<br>
@@ -32,7 +47,14 @@
     <button id="submit" src="index.js" onclick="formSubmit();">Submit</button>
     <button id="submit" onclick="myFunction();" onmouseout="outFunc()" class="tooltip" class="tooltiptext" id="myTooltip">Create Save Code</button>
     <p id="savedisplay"></p>
-    <script src="index.js">
+    <!--
+    <p id="keybindings">Below you can bind keys to perform certain actions easily.</p><br>
+    <form id="keyform" id="keybindings">
+      Attack: <input type="text" name="attackbind" id="savefield" id="keyfield"><br>
+      Run: <input type="text" name="runbind" id="savefield" id="keyfield">
+    </form>
+    -->
+    <script src="test.js">
       changeText();
       function formSubmit() {
         var formval = document.getElementById("saveform").innerHTML;

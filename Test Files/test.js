@@ -39,6 +39,27 @@ function checkAlive() {
 function clearConsol() {
   document.getElementById("log").innerHTML = "";
 }
+/* Commented below is FUBAR, and officially abandoned until I finally decide to revisit these horrors. To test, comment out myFunction and outFunc.
+function makeSave() {
+  var binaryVals = ['00110000', '00110001', '00110010', '00110011', '00110100', '00110101', '00110110', '00110111', '00111000', '00111001'];
+  var ASCIId = [0,1,2,3,4,5,6,7,8,9];
+  var saveCode;
+  var a = player.health.length();
+  for (var i = 0; i < a; i++) {
+    saveCode[i + 1] = player.health.slice(i,i+1);
+  }
+  for (i = 0; i < saveCode.length(); i++) {
+    a = saveCode[i];
+    saveCode[i] = binaryVals[a];
+  }
+  for (i = 0; i < saveCode.length(); i++) {
+    saveCode[0] = saveCode[0] + saveCode[1];
+  }
+  document.getElementById("savedisplay").innerHTML = saveCode[0];
+  document.getElementById("savedisplay").select();
+  document.execCommand("Copy");
+  alert("Save code copied to clipboard: " + saveCode[0]);
+} */
 function myFunction() {
   var copyText = document.getElementById("savefield");
   copyText.select();
@@ -99,6 +120,8 @@ function fight() {
     enemy.attack = enemy.attack*number;
     enemy.health = enemy.health*number;
     enemy.exp = enemy.exp*number;
+    consol.log("<img id=\"enemyimg\" src=\"" + 'https://ide.c9.io/henrikevers/text-game/assets/' + enemy.name + '.jpeg' + "\"></img>");
+    document.getElementById('enemyimg').src = 'https://ide.c9.io/henrikevers/text-game/assets/' + enemy.name + '.jpeg';
     player.health = player.health + (player.level * 2);
     if (player.health>player.maxhealth) {
       player.health = player.maxhealth;
