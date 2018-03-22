@@ -6,7 +6,7 @@ var consol = {
   log: function(text,color) {
     var hlog = document.getElementById("log").innerHTML;
     document.getElementById("log").innerHTML = hlog + "<br> " + "<a style='color:" + color + "'>" + text + "</a>";
-    document.getElementById("log").scrollTop = 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
+    document.getElementById("log").scrollTop = 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
   }
 };
 var monsters = ["goblin","kobold","bugbear","adult black dragon","ancient black dragon"];
@@ -73,11 +73,12 @@ function outFunc() {
   tooltip.innerHTML = "Copy to clipboard";
 }
 function statUpdate() {
-  document.getElementById("statblock").innerHTML = "You have " + player.attack + " attack.<br>You have " + player.health + " health.<br>You have " + player.speed + " speed.";
+  document.getElementById("statblock").innerHTML = "You have " + player.attack + " attack.<br>You have " + player.health + " health.<br>You have " + player.maxhealth + " maximum health.<br>You have " + player.speed + " speed.";
 }
 function changeText(){
   document.getElementById("points").innerHTML = "You have " + statIncrease + " points to spend.";
   statUpdate();
+  levelText();
 }
 function levelText() {
   document.getElementById("levelval").innerHTML = "You are level " + player.level;
@@ -88,6 +89,7 @@ function checkLevelUp() {
       player.exp = player.exp - (100*player.level);
       player.level = player.level + 1;
       statIncrease = statIncrease + 1;
+      player.health = player.health + player.level;
       changeText();
       consol.log("Choose a stat to increase.",'green');
   }
@@ -120,8 +122,7 @@ function fight() {
     enemy.attack = enemy.attack*number;
     enemy.health = enemy.health*number;
     enemy.exp = enemy.exp*number;
-    consol.log("<img id=\"enemyimg\" src=\"" + 'https://ide.c9.io/henrikevers/text-game/assets/' + enemy.name + '.jpeg' + "\"></img>");
-    document.getElementById('enemyimg').src = 'https://ide.c9.io/henrikevers/text-game/assets/' + enemy.name + '.jpeg';
+    consol.log("<img id=\"enemyimg\" src=\"" + 'https://github.com/Henrik-Evers/textgame/assets/' + enemy.name + '.jpeg' + "\"></img>");
     player.health = player.health + (player.level * 2);
     if (player.health>player.maxhealth) {
       player.health = player.maxhealth;
@@ -156,7 +157,7 @@ function run() {
   checkAlive();
   number = getRandom(1,100);
   number = number - (player.level * 2);
-  if (number > (100-player.speed)) {
+  if (number < player.speed) {
     consol.log("You ran away succesfully!");
     fight();
   }
@@ -170,14 +171,21 @@ function attackIncrease() {
   checkAlive();
   if (statIncrease > 0) {
     statIncrease--;
-    player.attack++;
+    player.attack = player.attack + (Math.ceil(player.level / 2));
+  }
+}
+function healthIncrease() {
+  checkAlive();
+  if (statIncrease > 0) {
+    statIncrease--;
+    player.maxhealth = player.maxhealth + (Math.ceil(player.level / 2));
   }
 }
 function speedIncrease() {
   checkAlive();
   if (statIncrease > 0) {
     statIncrease--;
-    player.speed++;
+    player.speed = player.maxhealth + (Math.ceil(player.level / 4));
   }
 }
 fight();

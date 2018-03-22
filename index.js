@@ -52,11 +52,12 @@ function outFunc() {
   tooltip.innerHTML = "Copy to clipboard";
 }
 function statUpdate() {
-  document.getElementById("statblock").innerHTML = "You have " + player.attack + " attack.<br>You have " + player.health + " health.<br>You have " + player.speed + " speed.";
+  document.getElementById("statblock").innerHTML = "You have " + player.attack + " attack.<br>You have " + player.health + " health.<br>You have " + player.maxhealth + " maximum health.<br>You have " + player.speed + " speed.";
 }
 function changeText(){
   document.getElementById("points").innerHTML = "You have " + statIncrease + " points to spend.";
   statUpdate();
+  levelText();
 }
 function levelText() {
   document.getElementById("levelval").innerHTML = "You are level " + player.level;
@@ -147,7 +148,14 @@ function attackIncrease() {
   checkAlive();
   if (statIncrease > 0) {
     statIncrease--;
-    player.attack++;
+    player.attack = player.attack + (Math.ceil(player.level / 2));
+  }
+}
+function healthIncrease() {
+  checkAlive();
+  if (statIncrease > 0) {
+    statIncrease--;
+    player.maxhealth = player.maxhealth + (Math.ceil(player.level / 2));
   }
 }
 function speedIncrease() {

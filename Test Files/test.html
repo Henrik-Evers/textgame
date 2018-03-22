@@ -1,6 +1,11 @@
-<!-- Copyright (C) 2018  Henrik Evers & Andrew Larkins -->
+<!-- Copyright (C) 2018  Henrik Evers & Andrew Larkins-->
 <!DOCTYPE html>
 <html>
+  <!-- Git Commit:
+      git add .
+      git commit -m "Commit Name"
+      git push -u origin master
+  -->
   <!-- TO-DO:
   Add character creation
   Add equipment and spells
@@ -24,7 +29,7 @@
     <link href="test.css" rel="stylesheet" type="text/css"/>
   </head>
   <body>
-    <p id="copyright">Copyright (C) 2018  Henrik Evers & Andrew Larkins<br>This work is licensed under GNU General Public License version 3.0</p>
+    <p id="copyright">Copyright (C) 2018  Henrik Evers & Andrew Larkins<br>This work is licensed under GNU General Public License version 3.0<br>Text-Based Adventure Game v0.1.0</p>
     <p>What do you want to do?</p>
     <button id="act" onclick="attack();">Attack</button>
     <button id="act" onclick="//Function here"></button>
@@ -35,7 +40,7 @@
     <p id="points">You have 0 points to spend.</p>
     <p id="stat-text">Choose a stat to level up:</p>
     <button id="up" onclick="attackIncrease(); changeText();">Attack Power</button>
-    <button id="up" onclick="//Function here"></button>
+    <button id="up" onclick="healthIncrease(); changeTest();">Max Health</button>
     <button id="up" onlcick="speedIncrease(); changeText();">Runnning Speed</button>
     <p id="spacer">ggggg</p><br>
     <p id="statblock">You have 2 attack.<br>You have 8 health.<br>You have 70 speed.</p>

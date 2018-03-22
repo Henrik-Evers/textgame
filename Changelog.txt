@@ -1,0 +1,15 @@
+Text-Based Adventure Game
+v0.1.0
+
+Changelog:
+
+v0.1.0
+Release. Includes 5 monsters:
+    -Goblin
+    -Kobold
+    -Bugbear
+    -Adult Black Dragon
+    -Ancient Black Dragon
+Includes 2 actions, which are attack and run.
+Increasable stats are attack power, maximim health, and running speed.
+HTML & CSS framework for savecodes - JS component under construction.
