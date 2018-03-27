@@ -3,7 +3,15 @@ v0.1.0
 
 Changelog:
 
+v0.1.1
+Date.
+Setting down framework for equipment in test files.
+Death now works.
+Max health added, and level up points can be used to level it up.
+Stat level up works better for higher levels.
+
 v0.1.0
+March 22, 2018.
 Release. Includes 5 monsters:
     -Goblin
     -Kobold

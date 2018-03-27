@@ -1,14 +1,16 @@
-/**********************DECLARE***********************/
+/*************************DECLARE*************************/
 var number;
 var player = {attack:2,health:8,maxhealth:8,speed:70,level:1,exp:0,dex:5};
+player.equipment = {weapon:0,chestarmour:0,shield:0,legarmour:0,headarmour:0,token1:0,token2:0};
 var enemy = {attack:1,health:1,name:1,exp:1};
 var consol = {
   log: function(text,color) {
     var hlog = document.getElementById("log").innerHTML;
     document.getElementById("log").innerHTML = hlog + "<br> " + "<a style='color:" + color + "'>" + text + "</a>";
-    document.getElementById("log").scrollTop = 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
+    document.getElementById("log").scrollTop = (1000^(1000^(1000^1000)));
   }
 };
+
 var monsters = ["goblin","kobold","bugbear","adult black dragon","ancient black dragon"];
 var attacks = [1,1.5,2,60,100];
 var healths = [5,3,10,250,500];
@@ -25,16 +27,6 @@ function getRandom(min, max) {
 }
 function end() {
   lost = 1;
-}
-function checkAlive() {
-  if (lost === 1) {
-    while(true) {
-      
-    }
-  }
-  else {
-    
-  }
 }
 function clearConsol() {
   document.getElementById("log").innerHTML = "";
@@ -64,7 +56,6 @@ function myFunction() {
   var copyText = document.getElementById("savefield");
   copyText.select();
   document.execCommand("Copy");
-  
   var tooltip = document.getElementById("myTooltip");
   tooltip.innerHTML = "Copied: " + copyText.value;
 }
@@ -74,6 +65,7 @@ function outFunc() {
 }
 function statUpdate() {
   document.getElementById("statblock").innerHTML = "You have " + player.attack + " attack.<br>You have " + player.health + " health.<br>You have " + player.maxhealth + " maximum health.<br>You have " + player.speed + " speed.";
+  document.getElementById("equipmentdisplay").innerHTML = "Weapon: " + player.equipment.weapon + "<br>Chest Armour: " + player.equipment.chestarmour + "<br>Leg Armour: " + player.equipment.legarmour + "<br>Head Armour: " + player.equipment.headarmour;
 }
 function changeText(){
   document.getElementById("points").innerHTML = "You have " + statIncrease + " points to spend.";
@@ -109,6 +101,7 @@ function enemyTurn() {
   statUpdate();
 }
 function fight() {
+  if (lost !== 1) {
   var number = getRandom(0,4);
   enemy.name = monsters[number];
   enemy.attack = attacks[number];
@@ -132,10 +125,10 @@ function fight() {
     consol.log("You encountered " + number + " " + enemy.name + "(s)!",'red');
     consol.log("");
     statUpdate();
-  }
+  }}
 }
 function attack() {
-  checkAlive();
+  if (lost !== 1) {
   enemy.health = enemy.health - player.attack;
   if (enemy.health < 1) {
     clearConsol();
@@ -151,10 +144,10 @@ function attack() {
     consol.log("The enemy has " + enemy.health + " health left.");
     consol.log("");
     enemyTurn();
-  }
+  }}
 }
 function run() {
-  checkAlive();
+  if (lost !== 1) {
   number = getRandom(1,100);
   number = number - (player.level * 2);
   if (number < player.speed) {
@@ -165,27 +158,27 @@ function run() {
     consol.log("You couldn't run away!");
     consol.log("");
     enemyTurn();
-  }
+  }}
 }
 function attackIncrease() {
-  checkAlive();
+  if (lost !== 1) {
   if (statIncrease > 0) {
     statIncrease--;
     player.attack = player.attack + (Math.ceil(player.level / 2));
-  }
+  }}
 }
 function healthIncrease() {
-  checkAlive();
+  if (lost !== 1) {
   if (statIncrease > 0) {
     statIncrease--;
     player.maxhealth = player.maxhealth + (Math.ceil(player.level / 2));
-  }
+  }}
 }
 function speedIncrease() {
-  checkAlive();
+  if (lost !== 1) {
   if (statIncrease > 0) {
     statIncrease--;
     player.speed = player.maxhealth + (Math.ceil(player.level / 4));
-  }
+  }}
 }
 fight();

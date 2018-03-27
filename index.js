@@ -26,16 +26,6 @@ function getRandom(min, max) {
 function end() {
   lost = 1;
 }
-function checkAlive() {
-  if (lost === 1) {
-    while(true) {
-      
-    }
-  }
-  else {
-    
-  }
-}
 function clearConsol() {
   document.getElementById("log").innerHTML = "";
 }
@@ -87,6 +77,7 @@ function enemyTurn() {
   statUpdate();
 }
 function fight() {
+  if (lost !== 1) {
   var number = getRandom(0,4);
   enemy.name = monsters[number];
   enemy.attack = attacks[number];
@@ -110,9 +101,9 @@ function fight() {
     consol.log("");
     statUpdate();
   }
-}
+}}
 function attack() {
-  checkAlive();
+  if (lost !== 1) {
   enemy.health = enemy.health - player.attack;
   if (enemy.health < 1) {
     clearConsol();
@@ -129,9 +120,9 @@ function attack() {
     consol.log("");
     enemyTurn();
   }
-}
+}}
 function run() {
-  checkAlive();
+  if (lost !== 1) {
   number = getRandom(1,100);
   number = number - (player.level * 2);
   if (number > (100-player.speed)) {
@@ -143,26 +134,26 @@ function run() {
     consol.log("");
     enemyTurn();
   }
-}
+}}
 function attackIncrease() {
-  checkAlive();
+  if (lost !== 1) {
   if (statIncrease > 0) {
     statIncrease--;
     player.attack = player.attack + (Math.ceil(player.level / 2));
-  }
+  }}
 }
 function healthIncrease() {
-  checkAlive();
+  if (lost !== 1) {
   if (statIncrease > 0) {
     statIncrease--;
     player.maxhealth = player.maxhealth + (Math.ceil(player.level / 2));
-  }
+  }}
 }
 function speedIncrease() {
-  checkAlive();
+  if (lost !== 1) {
   if (statIncrease > 0) {
     statIncrease--;
-    player.speed++;
-  }
+    player.speed = player.maxhealth + (Math.ceil(player.level / 4));
+  }}
 }
 fight();
