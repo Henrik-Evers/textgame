@@ -1,17 +1,18 @@
-<!-- Copyright (C) 2018  Henrik Evers & Andrew Larkins -->
+<!-- Copyright (C) 2018  Henrik Evers & Andrew Larkins-->
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Text-Based Adventure Game</title>
-    <link href="index.css" rel="stylesheet" type="text/css"/>
+    <title>Text-Based Adventure Game - Test</title>
+    <link href="test.css" rel="stylesheet" type="text/css"/>
   </head>
   <body>
     <p id="copyright">Copyright (C) 2018  Henrik Evers & Andrew Larkins<br>This work is licensed under GNU General Public License version 3.0<br>Text-Based Adventure Game v0.1.0</p>
+    <p onclick="openNew();" src="test.js" id="keybindingsp">Keybindings</p>
     <p>What do you want to do?</p>
     <button id="act" onclick="attack();">Attack</button>
-    <button id="act" onclick="//Function here"></button>
+    <button id="act" onclick="//Function here">Use Potion</button>
     <button id="act" onclick="run();">Run</button><br>
     <p id="spacer">ggggg</p><br>
     <br><p id="levelval">You are level 1</p>
@@ -23,15 +24,16 @@
     <button id="up" onlcick="speedIncrease(); changeText();">Runnning Speed</button>
     <p id="spacer">ggggg</p><br>
     <p id="statblock">You have 2 attack.<br>You have 8 health.<br>You have 70 speed.</p>
+    <p id="equipmentdisplay"></p>
     <p id="log"></p>
     <form id="saveform">
       Input Save Code:<br>
       <input type="text" name="save" id="savefield"><br>
     </form>
     <button id="submit" src="index.js" onclick="formSubmit();">Submit</button>
-    <button id="submit" onclick="myFunction();" onmouseout="outFunc()" class="tooltip" class="tooltiptext" id="myTooltip">Create Save Code</button>
+    <button id="submit" onclick="myFunction();" onmouseout="outFunc()" class="tooltip" class="tooltiptext" id="myTooltip">Create Save Code</button><br><br><br>
     <p id="savedisplay"></p>
-    <script src="index.js">
+    <script src="test.js">
       changeText();
       function formSubmit() {
         var formval = document.getElementById("saveform").innerHTML;

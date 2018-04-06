@@ -1,10 +1,19 @@
 Text-Based Adventure Game
-v0.1.0
+v0.1.2
+
 
 Changelog:
 
+v0.1.2
+April 6, 2018
+Images for monsters!
+More framework for equipment and finding equipment.
+Better combat encounters.
+Max health increase on level up.
+Added Terrasque.
+
 v0.1.1
-Date.
+March 27, 2018.
 Setting down framework for equipment in test files.
 Death now works.
 Max health added, and level up points can be used to level it up.

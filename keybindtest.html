@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+    <title>Key Bindings (Text-Based Adventure Game)</title>
+    <style>
+        #submit {
+          height:25px;
+          width:200px;
+          border-radius:8px;
+          background-color: LightGrey;
+          color: Black;
+          border:2px solid #dddddd;
+          box-shadow: 0 9px #999;
+          margin-bottom:10px;
+          margin-top:5px;
+          font-family: 'Questrial';
+        }
+        #submit:hover {
+          background-color:#d6d6d6
+        }
+        #submit:active {
+          background-color: #cccccc;
+          box-shadow: 0 5px #666;
+          transform: translateY(4px);
+        }
+        #savefield {
+          height:25px;
+          width:200px;
+          border-radius:8px;
+          background-color:lightgrey;
+        }
+        #savefield:hover {
+          background-color:#aaaaaa;
+        }
+        @font-face {
+          font-family: 'Questrial';
+          font-style: normal;
+          font-weight: 400;
+          src: local('Questrial'), local('Questrial-Regular'), url(http://fonts.gstatic.com/s/questrial/v7/QdVUSTchPBm7nuUeVf70viFl.woff2) format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        body {
+          font-family:"Questrial";
+          overflow:scroll;
+        }
+        #keyform {
+            width:20%;
+        }
+    </style>
+</head>
+<body>
+    <form id="keyform">
+        Attack:<br>
+        <input type="text" name="attackbind" id="savefield" id="attackbind"><br><br>
+        Run:<br>
+        <input type="text" name="runbind" id="savefield" id="runbind"><br><br>
+        <br>Increase Attack:<br>
+        <input type="text" name="attackincbind" id="savefield" id="attackincbind"><br><br>
+        Increase Max Health:<br>
+        <input type="text" name="healthincbind" id="savefield" id="healthincbind"><br><br>
+        Increase Running Speed:<br>
+        <input type="text" name="runincbind" id="savefield" id="runincbind"><br>
+    </form>
+    <button id="submit" id="applybinding" onclick="keyFormSubmit();" src="index.js">Apply</button>
+</body>

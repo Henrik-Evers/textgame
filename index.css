@@ -145,3 +145,11 @@ column-span:all;
 #keyfield {
   clear:left;
 }
+#enemyimg {
+  height:150px;
+  width:150px;
+}
+#keybindingsp {
+  color:blue;
+  text-decoration:underline;
+}

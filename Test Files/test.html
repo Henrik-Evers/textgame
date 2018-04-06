@@ -15,15 +15,13 @@
   <!-- Test Elements:
   HTML:
       Keybindings
-      Images
       Use Potion
   JS:
-      Images
       Savecodes
-      checkAlive(); Replacement //Done
-      Max Health increase //Done
+      Keypress
+      Equipment
   CSS:
-      enemyimg tag
+      --
   -->
   <!--
   Not all test elements are implemented/under construction yet.
@@ -36,6 +34,7 @@
   </head>
   <body>
     <p id="copyright">Copyright (C) 2018  Henrik Evers & Andrew Larkins<br>This work is licensed under GNU General Public License version 3.0<br>Text-Based Adventure Game v0.1.0</p>
+    <p onclick="openNew();" src="test.js" id="keybindingsp">Keybindings</p>
     <p>What do you want to do?</p>
     <button id="act" onclick="attack();">Attack</button>
     <button id="act" onclick="//Function here">Use Potion</button>
@@ -57,7 +56,7 @@
       <input type="text" name="save" id="savefield"><br>
     </form>
     <button id="submit" src="index.js" onclick="formSubmit();">Submit</button>
-    <button id="submit" onclick="myFunction();" onmouseout="outFunc()" class="tooltip" class="tooltiptext" id="myTooltip">Create Save Code</button>
+    <button id="submit" onclick="myFunction();" onmouseout="outFunc()" class="tooltip" class="tooltiptext" id="myTooltip">Create Save Code</button><br><br><br>
     <p id="savedisplay"></p>
     <!--
     <p id="keybindings">Below you can bind keys to perform certain actions easily.</p><br>
