@@ -6,9 +6,9 @@ For some reason the index files just gave up and stopped working.
 
 <b>CREDITS</b><br>
 <em>Scripting By:</em><br>
-Henrik Evers<br>
-Andrew Larkins<br><br>
+Henrik Evers<br><br>
 <em>Playtesting By:</em><br>
 Henrik Evers<br>
 Trevor Scritzky<br>
-Dexter Hines
+Dexter Hines<br><br>
+Special Thanks to Andrew Larkins for debugging.

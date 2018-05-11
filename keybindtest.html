@@ -48,17 +48,32 @@
     </style>
 </head>
 <body>
+  <script>
+    var testing = 1; //Set to 1 if testing keyFormSubmit, set to 0 if not.
+    function keyFormSubmit() {
+      alert('Hello World.');
+      var x = document.getElementById('attackbind');
+      alert(('Foo'));
+      alert(x.name);
+/*What I've figured out so far: I can perform document.getElementById, but the moment I try to get something from inside of it, the code crashes.
+Running this function will alert 'Hello World.', then 'Foo', and then will end the script.*/
+      alert('bar');
+    }
+    if (testing === 1) {
+      keyFormSubmit();
+    }
+  </script>
     <form id="keyform">
-        Attack:<br>
-        <input type="text" name="attackbind" id="savefield" id="attackbind"><br><br>
-        Run:<br>
-        <input type="text" name="runbind" id="savefield" id="runbind"><br><br>
-        <br>Increase Attack:<br>
-        <input type="text" name="attackincbind" id="savefield" id="attackincbind"><br><br>
-        Increase Max Health:<br>
-        <input type="text" name="healthincbind" id="savefield" id="healthincbind"><br><br>
-        Increase Running Speed:<br>
-        <input type="text" name="runincbind" id="savefield" id="runincbind"><br>
+      Attack:<br>
+      <input type="text" name="attackbind" id="savefield" id="attackbind" value="a"><br><br>
+      Run:<br>
+      <input type="text" name="runbind" id="savefield" id="runbind" value="d"><br><br>
+      <br>Increase Attack:<br>
+      <input type="text" name="attackincbind" id="savefield" id="attackincbind" value="z"><br><br>
+      Increase Max Health:<br>
+      <input type="text" name="healthincbind" id="savefield" id="healthincbind" value="x"><br><br>
+      Increase Running Speed:<br>
+      <input type="text" name="runincbind" id="savefield" id="runincbind" value="c"><br>
     </form>
-    <button id="submit" id="applybinding" onclick="keyFormSubmit();" src="index.js">Apply</button>
+    <button id="submit" id="applybinding" onclick="keyFormSubmit();" src="keybingtest.html">Apply</button>
 </body>
